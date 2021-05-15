@@ -1,0 +1,39 @@
+type Person {
+    id: ID!
+    firstName: String
+    middleName: String
+    lastName: String
+    email: String
+    primaryPhone: String
+    nickname: String
+    suffix: String
+    alternatePhoneNumber: String
+    streetAddress: String
+    extendedAddress1: String
+    extendedAddress2: String,
+    city: String
+    state: String
+    zipCode: Int
+    country: String
+    workHistoryList: [WorkHistory]
+}
+
+input PersonInput {
+    id: ID
+    firstName: String
+    middleName: String
+    lastName: String
+    email: String
+    primaryPhone: String
+    nickname: String
+    suffix: String
+    alternatePhoneNumber: String
+    streetAddress: String
+    extendedAddress1: String
+    extendedAddress2: String,
+    city: String
+    state: String
+    zipCode: Int
+    country: String
+    workHistoryList: [WorkHistoryInput]
+}

@@ -1,0 +1,9 @@
+type Query {
+    people : [Person!]
+    person(id: ID!): Person!
+}
+
+type Mutation {
+    updatePerson(input: PersonInput): Person!
+    createPerson(input: PersonInput): Person!
+}

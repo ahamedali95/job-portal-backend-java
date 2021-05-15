@@ -1,0 +1,21 @@
+type WorkHistory {
+    id: ID!
+    companyName: String
+    businessType: String
+    fromDate: String
+    endDate: String
+    businessTitle: String
+    isCurrentEmployer: Boolean
+    displayOrder: Int
+}
+
+input WorkHistoryInput {
+    id: ID
+    companyName: String
+    businessType: String
+    fromDate: String
+    endDate: String
+    businessTitle: String
+    isCurrentEmployer: Boolean
+    displayOrder: Int
+}

@@ -3,22 +3,20 @@ package com.jobportal.resource;
 import com.jobportal.Entity.Person;
 import com.jobportal.service.PersonService;
 import com.jobportal.util.ResourceNotFoundException;
-import graphql.kickstart.tools.GraphQLQueryResolver;
+import graphql.kickstart.tools.GraphQLMutationResolver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
-
 @Component
-public class Query implements GraphQLQueryResolver {
+public class MutationResolver implements GraphQLMutationResolver {
   @Autowired
   private PersonService personService;
 
-  public List<Person> getPeople() {
-    return personService.getAllPeople();
+  public Person updatePerson(Person person) throws ResourceNotFoundException {
+    return personService.updatePerson(person);
   }
 
-  public Person getPerson(long id) throws ResourceNotFoundException {
-    return personService.getPersonById(id);
+  public Person createPerson(Person person) {
+    return personService.createPerson(person);
   }
 }

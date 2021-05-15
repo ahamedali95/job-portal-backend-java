@@ -1,13 +1,1 @@
-spring:
-  h2:
-    console:
-      enabled: true
-      path: /testdb
-  datasource:
-    url: jdbc:h2:mem:devdb
-    username: sa
-    password:
-    driverClassName: org.h2.Driver
-    generate-unique-name: false
-  jpa:
-    database-platform: org.hibernate.dialect.H2Dialect
+

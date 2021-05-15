@@ -1,0 +1,11 @@
+databaseChangeLog:
+  -  changeSet:
+       id:  '20210515-update-work-history-table'
+       author:  ahamed
+       changes:
+         - addColumn:
+             tableName: WORK_HISTORY
+             columns:
+               - column:
+                  name: displayOrder
+                  type: int

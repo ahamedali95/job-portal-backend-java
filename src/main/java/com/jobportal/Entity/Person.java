@@ -4,6 +4,7 @@ package com.jobportal.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,6 +13,7 @@ import javax.persistence.*;
 @ToString
 @Entity
 @Table(name = "PERSON")
+@Builder
 public class Person {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,4 +33,7 @@ public class Person {
   private String state;
   private Integer zipCode;
   private String country;
+
+  @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
+  private List<WorkHistory> workHistoryList;
 }
