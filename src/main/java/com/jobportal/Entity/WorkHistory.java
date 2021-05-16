@@ -1,13 +1,9 @@
 package com.jobportal.Entity;
 
-import com.jobportal.util.Auditor;
 import lombok.*;
 import org.hibernate.annotations.Type;
-import org.springframework.data.annotation.CreatedDate;
-import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
-import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -17,8 +13,7 @@ import java.time.LocalDateTime;
 @Entity
 @Table(name = "WORK_HISTORY")
 @Builder
-@EntityListeners(AuditingEntityListener.class)
-public class WorkHistory extends Auditor {
+public class WorkHistory {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;

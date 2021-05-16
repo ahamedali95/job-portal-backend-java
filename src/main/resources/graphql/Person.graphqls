@@ -16,6 +16,7 @@ type Person {
     zipCode: Int
     country: String
     workHistoryList: [WorkHistory]
+    createdDate: String
 }
 
 input PersonInput {
