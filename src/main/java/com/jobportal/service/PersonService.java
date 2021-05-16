@@ -64,21 +64,6 @@ public class PersonService {
             .workHistoryList(person.getWorkHistoryList())
             .build();
 
-    for (WorkHistory workHistory: person.getWorkHistoryList()) {
-      WorkHistory $workHistory = WorkHistory.builder()
-              .id(workHistory.getId())
-              .companyName(workHistory.getCompanyName())
-              .businessType(workHistory.getBusinessType())
-              .fromDate(workHistory.getFromDate())
-              .endDate(workHistory.getEndDate())
-              .businessType(workHistory.getBusinessType())
-              .isCurrentEmployer(workHistory.getIsCurrentEmployer())
-              .displayOrder(workHistory.getDisplayOrder())
-              .person(newPerson)
-              .build();
-      workHistoryRepository.save($workHistory);
-    }
-
     return personRepository.save(newPerson);
   }
 
@@ -128,5 +113,12 @@ public class PersonService {
     } else {
       throw new IdentifierNotFoundException();
     }
+  }
+
+  @Transactional
+  public Long deletePerson(Long id) {
+    personRepository.deleteById(id);
+
+    return id;
   }
 }

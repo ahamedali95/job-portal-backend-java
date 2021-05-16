@@ -4,7 +4,9 @@ package com.jobportal.Entity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Getter
 @Setter
@@ -34,6 +36,7 @@ public class Person {
   private Integer zipCode;
   private String country;
 
-  @OneToMany(mappedBy = "person", fetch = FetchType.EAGER)
-  private List<WorkHistory> workHistoryList;
+  @OneToMany(fetch = FetchType.EAGER, cascade = { CascadeType.ALL })
+  @JoinColumn(name="person_id")
+  private Set<WorkHistory> workHistoryList = new HashSet<WorkHistory>();
 }

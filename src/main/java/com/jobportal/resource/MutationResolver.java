@@ -19,4 +19,8 @@ public class MutationResolver implements GraphQLMutationResolver {
   public Person createPerson(Person person) {
     return personService.createPerson(person);
   }
+
+  public Long deletePerson(Long id) {
+    return personService.deletePerson(id);
+  }
 }
